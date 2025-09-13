@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>💌 Knock Knock!</title>
+   <link rel="stylesheet" href="design.css" />
+  <script src="script.js"></script>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      background: linear-gradient(to bottom, #ffffff, #c9d3dd);
+      font-family: 'Comic Sans MS', cursive;
+      text-align: center;
+    }
+
+    .envelope-container {
+      width: 260px;
+      height: 195px;
+      position: relative;
+      perspective: 1000px;
+      margin-bottom: 1.5rem;
+      transform: translateY(-20px); /* move up */
+    }
+
+    .envelope {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      animation: bounce 2s infinite ease-in-out;
+    }
+
+    .envelope-body {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom right, #fbd0dd, #f8c4e0);
+      border-radius: 5px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+
+    .envelope-flap {
+      width: 0;
+      height: 0;
+      border-left: 130px solid transparent;
+      border-right: 130px solid transparent;
+      border-bottom: 97.5px solid #f6aacb;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform-origin: bottom center;
+      transform: rotateX(180deg) translateY(97.5px);
+      z-index: 2;
+    }
+
+    .envelope-seal {
+      position: absolute;
+      top: 55%;
+      left: 50%;
+      transform: translate(-50%, -50%) translateY(-12px);
+      font-size: 36px;
+      z-index: 3;
+      animation: seal-pulse 2s infinite ease-in-out;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      25% { transform: translateY(-20px) rotate(-5deg); }
+      50% { transform: translateY(0) rotate(0deg); }
+      75% { transform: translateY(-20px) rotate(5deg); }
+    }
+
+    @keyframes seal-pulse {
+      0%, 100% {
+        transform: translate(-50%, -50%) translateY(-12px) scale(1);
+      }
+      50% {
+        transform: translate(-50%, -50%) translateY(-12px) scale(1.1);
+      }
+    }
+
+    .message {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      color: #aa6b82;
+    }
+
+    button {
+      background-color: #aa6b82;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 30px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: #3e3639;
+    }
+
+    @media (max-width: 480px) {
+      .envelope-container {
+        width: 160px;
+        height: 120px;
+      }
+
+      .envelope-flap {
+        border-left: 80px solid transparent;
+        border-right: 80px solid transparent;
+        border-bottom: 60px solid #f6aacb;
+        transform: rotateX(180deg) translateY(60px);
+      }
+
+      .envelope-seal {
+        font-size: 26px;
+        transform: translate(-50%, -50%) translateY(-10px);
+      }
+
+      .message {
+        font-size: 1rem;
+      }
+
+      button {
+        font-size: 0.9rem;
+        padding: 0.6rem 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="envelope-container">
+    <div class="envelope">
+      <div class="envelope-flap"></div>
+      <div class="envelope-body"></div>
+      <div class="envelope-seal">❤️</div>
+    </div>
+  </div>
+
+  <div class="message">Knock knock birthday girl</div>
+
+  <button onclick="window.location.href='birthday.html'">who's there coconut</button>
+
+</body>
+</html>

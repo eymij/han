@@ -1,0 +1,167 @@
+/* General body style */
+body {
+  margin: 0;
+  padding: 2rem;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+   background: linear-gradient(to bottom, #ffffff, #c9d3dd);
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+}
+
+/* Heading style */
+h1 {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 2.0rem;
+  margin-top: 1.5rem;
+  color: #1b1215;
+}
+
+h2{
+   font-size: 2.0rem;
+   margin-top: 1.5rem;
+   color: palevioletred;
+}
+
+/* Paragraph / message style */
+#typedMessage {
+  font-size: 1.3rem;
+  color: #444;
+  margin-top: 0.5rem;
+  max-width: 500px;
+font-family: 'Patrick Hand', cursive;
+
+  white-space: pre-wrap;
+  text-align: justify; /* 👈 ito ang nagpa-justify */
+}
+
+/* GIF container styling */
+.tenor-gif-embed {
+  margin-top: 20px;
+  max-width: 320px;
+  width: 100%;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Block the Tenor branding link */
+.tenor-gif-embed a {
+  display: none !important;
+}
+
+/* Overlay to block clicks */
+.tenor-gif-embed::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background: transparent;
+}
+
+/* Optional container if used */
+.container {
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 16px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  width: 90%;
+}
+
+/* Button style (optional if you add a button) */
+button {
+  background-color: #9d8e94;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #aa6b82;
+  transform: scale(1.05);
+}
+
+/* Responsive tweaks for smaller screens */
+@media (max-height: 600px) {
+  .container {
+    padding: 1.2rem;
+  }
+
+
+  button {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+
+/**falling emoji*/
+
+#heart-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 999;
+}
+
+.floating-heart {
+  position: absolute;
+  bottom: 0;
+  width: 20px;
+  height: 20px;
+  background-color: pink;
+  transform: rotate(45deg);
+  animation: floatUp ease-in;
+  opacity: 0.7;
+}
+
+.floating-heart::before,
+.floating-heart::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: pink;
+  border-radius: 50%;
+}
+
+.floating-heart::before {
+  top: -10px;
+  left: 0;
+}
+
+.floating-heart::after {
+  left: -10px;
+  top: 0;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) rotate(45deg);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(-100vh) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+
+
+
+
+
+}
